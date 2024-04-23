@@ -69,9 +69,11 @@ class LinkedList:
 
 class Solution:
     def middleNode(self, head):
+        if head is None:
+            return head
         itr_slow = head
         itr_fast = head
-        while itr_fast is not None:
+        while itr_fast is not None and itr_fast.next is not None:
             itr_fast = itr_fast.next.next
             itr_slow = itr_slow.next
         return itr_slow
