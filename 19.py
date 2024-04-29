@@ -34,22 +34,37 @@ class LinkedList:
     
 
 class Solution:
-    def removeNthFromEnd(self, head, index):
-        if head is None:
-            return None
-        if index == 0:
-            head = head.next
-        else:
-            current = head
-            current_index = 0
-            while current and current_index < index-1:
-                current = current.next
-                current_index += 1
-            
-            if current and current.next:
-                current.next = current.next.next
-        
-        return head
+    def removeNthFromEnd(self, head, n):
+        # dummy = Node(0)
+        # dummy.next = head
+        # first = dummy
+        # second = dummy
+
+        # for _ in range(n + 1):
+        #     first = first.next
+
+        # while first is not None:
+        #     first = first.next
+        #     second = second.next
+
+        # second.next = second.next.next
+
+        # return dummy.next
+
+        length = 0
+        dummy = Node(0)
+        dummy.next = head
+        cur = head
+        while cur is not None:
+            length += 1
+            cur = cur.next
+        index = length - n
+        cur1 = dummy
+        while index > 0:
+            index -= 1
+            cur1 = cur1.next
+        cur1.next = cur1.next.next
+        return dummy.next
     
 
 ll1 = LinkedList()
