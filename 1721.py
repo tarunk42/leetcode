@@ -37,8 +37,27 @@ class LinkedList:
 
 class Solution:
     def swapNodes(self, head, k: int):
-        dummy = Node(0)
+        if not head:
+            return head
         
+        first = last = head
+
+        for i in range(k-1):
+            if first.next:
+                first = first.next
+            else:
+                return head
+
+        current = first.next
+        
+        while current:
+            last = last.next
+            current = current.next
+        
+        first.data, last.data = last.data, first.data
+
+        return head
+
 
 ll1 = LinkedList()
 
@@ -48,5 +67,11 @@ ll1.add(3)
 ll1.add(4)
 ll1.add(5)
 ll1.add(6)
+
+print(ll1)
+
+soln = Solution()
+
+soln.swapNodes(ll1.head,2)
 
 print(ll1)
