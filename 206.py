@@ -43,7 +43,10 @@ class Solution:
             current.next = previous
             previous = current
             current = next_node
-        return previous  # update the head to the last node encountered
+        
+        head = previous
+
+        return head  # update the head to the last node encountered
         # # brute force
         # tList = []
         # current = head
@@ -59,6 +62,16 @@ class Solution:
         # head = newList.head
 
         # return newList
+    
+    def recursivereverseList(self, head):
+        if not head:
+            return head
+        newHead = head
+        if head.next:
+            newHead = self.recursivereverseList(head.next)
+            head.next.next = head
+        head.next = None
+        return newHead
 
 
 
@@ -71,8 +84,12 @@ for i in range(0,6):
 print(ll1)
 
 soln = Solution()
-new_head = soln.reverseList(ll1.head)
+# new_head = soln.reverseList(ll1.head)
+new_rec_head = soln.recursivereverseList(ll1.head)
 
-ll1.head = new_head
+# ll1.head = new_head
+
+
+ll1.head = new_rec_head
 
 print(ll1)
