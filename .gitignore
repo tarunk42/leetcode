@@ -1,0 +1,5 @@
+linkedlist/env
+linkedlist/linkedlist.egg-info
+__pycache__/
+build/
+linkedlist/tree.txt
