@@ -25,7 +25,12 @@ Here, I'll list all the problems that I've solved:
 - `876.py`: [LeetCode Problem 876 - Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
 - `92.py`: [LeetCode Problem 92 - Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/)
 
-I have also implemented a Linked List library.
+I have also implemented a Linked List library. To install the Library follow the steps:<br>
+1. Navigate to the linkedlist: `cd linkedlist`
+2. Initiate a python virtual environment: `python3 -m venv env`
+3. Activate the virtual environment: `source env/bin/activate`
+4. Install the library using `pip`: `pip install .`
+5. Run the test to validate installation: `python3 -m unittest discover -s tests`
 
 ## Contributing
 
