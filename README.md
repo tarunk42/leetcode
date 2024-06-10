@@ -24,6 +24,7 @@ Here, I'll list all the problems that I've solved:
 - `2095.py`: [LeetCode Problem 2095 - Delete the Middle Node of a Linked List](https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/)
 - `876.py`: [LeetCode Problem 876 - Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
 - `92.py`: [LeetCode Problem 92 - Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/)
+- `237.py`: [Leetcode Problem 237 - Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/description/)
 
 I have also implemented a Linked List library. To install the Library follow the steps:<br>
 1. Navigate to the linkedlist: <br>
