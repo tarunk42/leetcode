@@ -3,3 +3,4 @@ linkedlist/linkedlist.egg-info
 __pycache__/
 build/
 linkedlist/tree.txt
+.DS_Store
