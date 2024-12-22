@@ -42,7 +42,23 @@ def threeSum_twoPass(nums):
                 right -= 1
     return result
 
+def threeSum_hashmap(nums):
+    nums.sort()
+    n = len(nums)
+    result = set()
+
+    for i in range(n):
+        target = -nums[i]
+        index_map = {}
+        for j in range(i+1, n):
+            sub = target - nums[j]
+            if sub in index_map:
+                result.add((nums[i], nums[j], sub))
+            index_map[nums[j]] = j
+    return [list(t) for t in result]
+
 nums = [-1,0,1,2,-1,-4]
 
 print(threeSum(nums))
 print(threeSum_twoPass(nums))
+print(threeSum_hashmap(nums))
