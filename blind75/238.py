@@ -13,6 +13,25 @@ def productExceptSelf(nums):
     
     return result
 
+def product_except_self(nums):
+    n = len(nums)
+    result = [1] * n
+
+    # Calculate prefix products
+    prefix = 1
+    for i in range(n):
+        result[i] = prefix
+        prefix *= nums[i]
+
+    # Calculate suffix products and update result
+    suffix = 1
+    for i in range(n - 1, -1, -1):
+        result[i] *= suffix
+        suffix *= nums[i]
+
+    return result
+
+
 
 
 nums = [1,2,3,4]
@@ -22,4 +41,9 @@ import time
 start = time.time()
 print(productExceptSelf(nums_large)) 
 end = time.time()
-print(end - start) # 0.0001
+print(end - start) 
+
+start = time.time()
+print(product_except_self(nums_large))
+end = time.time()
+print(end - start) 
