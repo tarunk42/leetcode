@@ -7,12 +7,13 @@
 
 
 # brute force
-def findTargetSumWays(nums, target):
-    def calculate(nums, i, sum, S):
-        if i == len(nums):
-            return 1 if sum == S else 0
-        return calculate(nums, i+1, sum + nums[i], S) + calculate(nums, i+1, sum - nums[i], S)
-    return calculate(nums, 0, 0, target)
+def findTargetSumWays(nums, target): 
+    def calculate(nums, i, sum, S):                                                  # S is the target, sum is the current sum, i is the current index, nums is the array
+        if i == len(nums):                                                           # if we reach the end of the array
+            return 1 if sum == S else 0                                              # if the sum is equal to the target, return 1, else return 0
+        return calculate(nums, i+1, sum + nums[i], S) + calculate(nums, i+1, sum - nums[i], S) # return the sum of the two recursive calls
+    return calculate(nums, 0, 0, target)                                                       # return the result of the recursive function
+
 
 # dynamic programming
 def findTargetSumWaysDP(nums, target):
